@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra/Borde exterior oscuro -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <solid android:color="#2B0508" />
+        </shape>
+    </item>
+
+    <!-- Fondo vino/rojo oscuro degradado -->
+    <item
+        android:bottom="3dp"
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="14dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#8A1C24"
+                android:centerColor="#5C0D13"
+                android:endColor="#360508" />
+            <stroke
+                android:width="2dp"
+                android:color="#B83A44" />
+        </shape>
+    </item>
+</layer-list>

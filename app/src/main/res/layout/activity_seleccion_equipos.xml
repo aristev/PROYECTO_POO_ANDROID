@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SeleccionEquiposActivity">
+
+    <!-- FONDO DEL COLISEO -->
+    <ImageView
+        android:id="@+id/ivFondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_coliseo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- CAPA OSCURA PARA CONTRASTE RETRO -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#B30D0D12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingTop="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:gravity="center_horizontal">
+
+            <!-- TÍTULO PRINCIPAL -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELECCIÓN DE EQUIPOS"
+                android:fontFamily="@font/press_start_2p"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#F5C542"
+                android:shadowColor="#000000"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="2"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp" />
+
+            <!-- USERNAME DEL JUGADOR -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PLAYER USERNAME"
+                android:fontFamily="@font/press_start_2p"
+                android:textColor="#C0C0C0"
+                android:textSize="9sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etNombreJugador"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/box_input_retro"
+                android:hint="INTRODUZCA NOMBRE"
+                android:textColorHint="#7A7A7A"
+                android:textColor="#FFFFFF"
+                android:fontFamily="@font/press_start_2p"
+                android:textSize="9sp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="14dp" />
+
+            <!-- ================= CONTENEDOR EQUIPO A ================= -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box_equipo_a"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EQUIPO A"
+                    android:fontFamily="@font/press_start_2p"
+                    android:textColor="#F5C542"
+                    android:textSize="11sp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Slot A1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoA1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_guerrero_rojo" />
+
+                    <Spinner
+                        android:id="@+id/spA1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etA1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot A2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoA2"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_guerrero_rojo" />
+
+                    <Spinner
+                        android:id="@+id/spA2"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etA2"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot A3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoA3"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_mago_rojo" />
+
+                    <Spinner
+                        android:id="@+id/spA3"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etA3"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot A4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoA4"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_mistico_rojo" />
+
+                    <Spinner
+                        android:id="@+id/spA4"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etA4"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnConfirmarA"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/btn_retro_rojo_fondo"
+                    android:text="CONFIRMAR EQUIPO A"
+                    android:fontFamily="@font/press_start_2p"
+                    android:textColor="#FFFFFF"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <!-- ================= CONTENEDOR EQUIPO B ================= -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/box_equipo_b"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EQUIPO B"
+                    android:fontFamily="@font/press_start_2p"
+                    android:textColor="#F5C542"
+                    android:textSize="11sp"
+                    android:textAlignment="center"
+                    android:layout_marginBottom="10dp" />
+
+                <!-- Slot B1 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoB1"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_guerrero_azul" />
+
+                    <Spinner
+                        android:id="@+id/spB1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etB1"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot B2 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoB2"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_guerrero_azul" />
+
+                    <Spinner
+                        android:id="@+id/spB2"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etB2"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot B3 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="6dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoB3"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_mago_azul" />
+
+                    <Spinner
+                        android:id="@+id/spB3"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etB3"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Slot B4 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/ivIconoB4"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/box_icono_retro"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_mistico_azul" />
+
+                    <Spinner
+                        android:id="@+id/spB4"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro" />
+
+                    <EditText
+                        android:id="@+id/etB4"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/box_input_retro"
+                        android:hint="NOMBRE"
+                        android:textColorHint="#666666"
+                        android:textColor="#FFFFFF"
+                        android:fontFamily="@font/press_start_2p"
+                        android:textSize="8sp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnConfirmarB"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:background="@drawable/btn_retro_azul_fondo"
+                    android:text="CONFIRMAR EQUIPO B"
+                    android:fontFamily="@font/press_start_2p"
+                    android:textColor="#FFFFFF"
+                    android:textSize="9sp" />
+            </LinearLayout>
+
+            <!-- BOTÓN FINAL A LA BATALLA -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnIniciarCombate"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/btn_retro_rojo_fondo"
+                android:text="¡A LA BATALLA!"
+                android:fontFamily="@font/press_start_2p"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

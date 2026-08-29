@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#12111A"
+    android:paddingTop="36dp"
+    android:paddingHorizontal="8dp"
+    android:paddingBottom="8dp"
+    android:clipToPadding="false"
+    tools:context=".activity_combate">
+
+    <!-- BANNER SUPERIOR: USUARIO, TÍTULO, RONDA Y TURNO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2A1B30"
+        android:padding="8dp"
+        android:layout_marginBottom="8dp">
+
+        <!-- FILA 1: TÍTULO Y USUARIO REPARADOS SIN MONTARSE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tvHeaderArena"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.62"
+                android:text="ARENA DE COMBATE"
+                android:textColor="#FFD700"
+                android:fontFamily="@font/press_start_2p"
+                android:textSize="10sp"
+                android:gravity="start|center_vertical" />
+
+            <TextView
+                android:id="@+id/tvUsuarioLogueado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.38"
+                android:text="USER"
+                android:textColor="#00FFFF"
+                android:fontFamily="@font/press_start_2p"
+                android:textSize="7sp"
+                android:gravity="end|center_vertical"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvRondaActual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RONDA 1 / 15"
+            android:textColor="#FF9800"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="9sp"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/tvTurnoInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TURNO: GUERRERO (EQUIPO A)"
+            android:textColor="#4AF626"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="8sp"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- TABLERO / ARENA DE COMBATE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1D2E1D"
+        android:padding="8dp">
+
+        <!-- EQUIPO B (RIVAL) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--- EQUIPO B (RIVAL) ---"
+            android:textColor="#5599FF"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="8sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="4dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <!-- B0 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+                <TextView android:id="@+id/tvHpB0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="120 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <ProgressBar android:id="@+id/pbB0" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+
+                <ImageView
+                    android:id="@+id/ivSpriteB0"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_guerrero_azul"
+                    app:srcCompat="@drawable/ic_guerrero_azul" />
+                <TextView android:id="@+id/tvNameB0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P1" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- B1 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+                <TextView android:id="@+id/tvHpB1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="120 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <ProgressBar android:id="@+id/pbB1" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+
+                <ImageView
+                    android:id="@+id/ivSpriteB1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_guerrero_azul"
+                    app:srcCompat="@drawable/ic_guerrero_azul" />
+                <TextView android:id="@+id/tvNameB1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P2" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- B2 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+                <TextView android:id="@+id/tvHpB2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="80 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <ProgressBar android:id="@+id/pbB2" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+
+                <ImageView
+                    android:id="@+id/ivSpriteB2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_mago_rojo"
+                    app:srcCompat="@drawable/ic_mago_azul" />
+                <TextView android:id="@+id/tvNameB2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P3" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- B3 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+                <TextView android:id="@+id/tvHpB3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="90 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <ProgressBar android:id="@+id/pbB3" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+
+                <ImageView
+                    android:id="@+id/ivSpriteB3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_mistico_azul"
+                    app:srcCompat="@drawable/ic_mistico_azul" />
+                <TextView android:id="@+id/tvNameB3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P4" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- LÍNEA CENTRAL / ARENA -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="#2E6B9E"
+            android:layout_marginVertical="10dp" />
+
+        <!-- EQUIPO A (ALIADO) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="4">
+
+            <!-- A0 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/ivSpriteA0"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_guerrero_rojo"
+                    app:srcCompat="@drawable/ic_guerrero_rojo" />
+                <ProgressBar android:id="@+id/pbA0" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+                <TextView android:id="@+id/tvHpA0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="120 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <TextView android:id="@+id/tvNameA0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P1" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- A1 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/ivSpriteA1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_guerrero_rojo"
+                    app:srcCompat="@drawable/ic_guerrero_rojo" />
+                <ProgressBar android:id="@+id/pbA1" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+                <TextView android:id="@+id/tvHpA1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="120 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <TextView android:id="@+id/tvNameA1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P2" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- A2 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/ivSpriteA2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_mago_rojo"
+                    app:srcCompat="@drawable/ic_mago_rojo" />
+                <ProgressBar android:id="@+id/pbA2" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+                <TextView android:id="@+id/tvHpA2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="80 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <TextView android:id="@+id/tvNameA2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P3" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+
+            <!-- A3 -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:padding="2dp">
+
+                <ImageView
+                    android:id="@+id/ivSpriteA3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_mistico_rojo"
+                    app:srcCompat="@drawable/ic_mistico_rojo" />
+                <ProgressBar android:id="@+id/pbA3" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" />
+                <TextView android:id="@+id/tvHpA3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="90 HP" android:textColor="#FFF" android:textSize="7sp" />
+                <TextView android:id="@+id/tvNameA3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P4" android:textColor="#DDD" android:textSize="7sp" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="--- EQUIPO A (ALIADO) ---"
+            android:textColor="#FF5555"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="8sp"
+            android:textAlignment="center"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginVertical="6dp"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEstrategia"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="USAR ESTRATEGIA"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="8sp"
+            android:background="@drawable/box_input_retro"
+            android:layout_marginEnd="4dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAtacar"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="LANZAR ATAQUE"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/press_start_2p"
+            android:textSize="8sp"
+            android:background="@drawable/btn_retro_rojo_fondo"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+
+    <!-- CONSOLA DE REGISTRO DE COMBATE -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRO DE COMBATE:"
+        android:textColor="#FFD700"
+        android:fontFamily="@font/press_start_2p"
+        android:textSize="8sp"
+        android:layout_marginBottom="2dp" />
+
+    <ScrollView
+        android:id="@+id/svLog"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#0A0A0E"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#4AF626"
+            android:fontFamily="monospace"
+            android:textSize="10sp"
+            android:lineSpacingExtra="2dp"
+            android:text=">>> ¡BATALLA INICIADA EN RONDA 1!\n" />
+    </ScrollView>
+
+</LinearLayout>

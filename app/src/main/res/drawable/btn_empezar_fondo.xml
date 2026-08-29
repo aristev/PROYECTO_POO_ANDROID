@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Capa 1: Borde exterior amarillo/dorado grueso -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="45dp" />
+            <solid android:color="#F5C542" />
+        </shape>
+    </item>
+
+    <!-- Capa 2: Fondo rojo con degradado brillante sin bordes negros -->
+    <item
+        android:bottom="8dp"
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="38dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#D83A4A"
+                android:centerColor="#A81C28"
+                android:endColor="#6B0A12" />
+        </shape>
+    </item>
+</layer-list>
