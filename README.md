@@ -6,7 +6,6 @@ Un juego de combates por turnos desarrollado de forma nativa para Android. Este 
 
 Dos equipos (Equipo Rojo y Equipo Azul) se enfrentan en una arena de combate en partidas de hasta 15 rondas. El jugador puede configurar la alineación de su equipo de 4 integrantes seleccionando entre distintas clases, cada una con estadísticas y habilidades únicas. La aplicación gestiona la interfaz gráfica, el estado de la partida, los turnos y un registro (log) de batalla en tiempo real.
 
----
 
 ## 🧠 Conceptos de POO Aplicados
 
@@ -20,7 +19,6 @@ El núcleo lógico del juego está diseñado respetando las buenas prácticas de
 * **Encapsulamiento:** El estado de cada `Equipo` y `Personaje` está protegido, permitiendo modificaciones únicamente a través de métodos de control de daño (`recibirAtaque()`, `realizarAtaque()`) y gestión de vida.
 * **Serialización:** Paso de objetos complejos (instancias de `Equipo`) entre las Activities de Android mediante la interfaz `Serializable`.
 
----
 
 ## 🎮 Características de la Aplicación
 
@@ -32,7 +30,7 @@ El núcleo lógico del juego está diseñado respetando las buenas prácticas de
 * **Bitácora Integrada:** Consola (Log) desplazable que registra daños, estrategias utilizadas y caídas en combate en cada turno.
 * **Audio:** Implementación de `SoundManager` nativo usando `MediaPlayer` para la música de fondo del coliseo.
 
----
+
 
 ## 🛠️ Tecnologías Utilizadas
 
